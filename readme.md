@@ -86,7 +86,7 @@ No frameworks. No libraries. 100% Vanilla JS.
 student-survival-toolkit/
 │
 ├── index.html
-├── assets/
+
 │   ├── style.css
 │   └── app.js
 └── README.md
@@ -170,3 +170,4 @@ You are free to use, modify, and distribute it.
 ### 💬 Feedback & Suggestions
 
 Feel free to open issues or propose improvements — contributions are welcome!
+
