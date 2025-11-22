@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Survival Toolkit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="asset/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Student Survival Toolkit</h1>
+    <p>All-in-one dashboard for college students</p>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="dashboard" class="tab-btn active">Dashboard</button>
+    <button data-tab="assignments" class="tab-btn">Assignments</button>
+    <button data-tab="gpa" class="tab-btn">GPA Calculator</button>
+    <button data-tab="pomodoro" class="tab-btn">Pomodoro</button>
+    <button data-tab="motivation" class="tab-btn">Motivation Board</button>
+    <button data-tab="resources" class="tab-btn">Resources</button>
+  </nav>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="tab-content active">
+      <h2>Overview</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Upcoming Assignment</h3>
+          <p id="next-assignment">No assignments yet.</p>
+        </div>
+        <div class="card">
+          <h3>Current GPA</h3>
+          <p id="current-gpa">-</p>
+        </div>
+        <div class="card">
+          <h3>Today’s Motivation</h3>
+          <p id="daily-quote">Add some motivational notes!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENTS -->
+    <section id="assignments" class="tab-content">
+      <h2>Assignment Tracker</h2>
+      <form id="assignment-form">
+        <input type="text" id="assign-subject" placeholder="Subject" required />
+        <input type="text" id="assign-title" placeholder="Title" required />
+        <input type="date" id="assign-due" required />
+        <select id="assign-priority">
+          <option value="Low">Low</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="High">High</option>
+        </select>
+        <button type="submit">Add Assignment</button>
+      </form>
+
+      <table id="assignment-table">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Title</th>
+            <th>Due</th>
+            <th>Priority</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- GPA CALCULATOR -->
+    <section id="gpa" class="tab-content">
+      <h2>GPA Calculator</h2>
+      <table id="gpa-table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Credits</th>
+            <th>Grade</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="gpa-body">
+          <!-- rows added dynamically -->
+        </tbody>
+      </table>
+      <button id="add-gpa-row">Add Course</button>
+      <button id="calculate-gpa">Calculate GPA</button>
+      <p>Your GPA: <span id="gpa-result">-</span></p>
+    </section>
+
+    <!-- POMODORO -->
+    <section id="pomodoro" class="tab-content">
+      <h2>Pomodoro Timer</h2>
+      <div id="timer-display">25:00</div>
+      <div class="timer-controls">
+        <button id="start-timer">Start</button>
+        <button id="pause-timer">Pause</button>
+        <button id="reset-timer">Reset</button>
+      </div>
+      <p>Mode: <span id="timer-mode">Focus</span></p>
+    </section>
+
+    <!-- MOTIVATION -->
+    <section id="motivation" class="tab-content">
+      <h2>Motivational Board</h2>
+      <form id="motivation-form">
+        <input type="text" id="motivation-text" placeholder="Write a quote or note..." required />
+        <button type="submit">Add</button>
+      </form>
+      <ul id="motivation-list"></ul>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" class="tab-content">
+      <h2>Resource Organiser</h2>
+      <form id="resource-form">
+        <input type="text" id="resource-title" placeholder="Title" required />
+        <input type="url" id="resource-url" placeholder="URL" required />
+        <input type="text" id="resource-tag" placeholder="Tag (DSA, Maths, OS...)" />
+        <button type="submit">Add Resource</button>
+      </form>
+      <input type="text" id="resource-search" placeholder="Search by title or tag..." />
+      <ul id="resource-list"></ul>
+    </section>
+  </main>
+
+  <script>
+    // Set minimum date to today for the assignment date input
+    document.addEventListener('DOMContentLoaded', function() {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('assign-due').setAttribute('min', today);
+    });
+  </script>
+  <script src="asset/app.js"></script>
+</body>
+</html>

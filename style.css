@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+.tab-btn {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: #111827;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.tab-btn.active {
+  background: #2563eb;
+  color: white;
+}
+
+main {
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 0 1rem 2rem;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 1rem;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: #111827;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #1f2937;
+}
+
+/* forms & tables */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+form input,
+form select,
+form button {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 1rem;
+}
+
+form input[type="date"] {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #e5e7eb;
+  min-width: 160px;
+  font-size: 1rem;
+}
+
+form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+form button {
+  background: #2563eb;
+  border-color: #2563eb;
+  cursor: pointer;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #020617;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #111827;
+  text-align: left;
+}
+
+#timer-display {
+  font-size: 3rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.timer-controls button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+  margin-top: 0.75rem;
+}
+
+li {
+  background: #020617;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background: transparent;
+  border: none;
+  color: #f87171;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* responsive */
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  form input,
+  form select {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  form button {
+    flex: 0 0 auto;
+  }
+}
