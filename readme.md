@@ -10,7 +10,7 @@ You can deploy this project using GitHub Pages or any static hosting platform.
 
 > After deployment, add your live link here:
 
-```
+```https://saifyali05.github.io/STUDENT-SURVIVAL-KIT/
 
 ```
 
@@ -170,4 +170,5 @@ You are free to use, modify, and distribute it.
 ### 💬 Feedback & Suggestions
 
 Feel free to open issues or propose improvements — contributions are welcome!
+
 
